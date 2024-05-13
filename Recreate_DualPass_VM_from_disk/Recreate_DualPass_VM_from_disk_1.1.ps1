@@ -1338,6 +1338,8 @@ Stop-Transcript | Out-Null
 
  {
  Write-Host ""
+ $aadClientID = Read-host -Prompt "Enter AAD Client ID"
+ Write-Host ""
  $aadClientSecretSec = Read-host -Prompt "Enter AAD Client Secret"
  #Get Application ObjectID based on APPID
  $error.clear()
