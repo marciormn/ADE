@@ -37,7 +37,7 @@ import-module AzureAD.Standard.Preview
 AzureAD.Standard.Preview\Connect-AzureAD -Identity -TenantID $env:ACC_TID 
  
 # Connect to Az Account
-Connect-AzAccount -UseDeviceAuthentication -ErrorAction Stop | Out-Null
+#Connect-AzAccount -UseDeviceAuthentication -ErrorAction Stop | Out-Null
 
 #Get current logged in user and active directory tenant details:
 Set-AzContext -Subscription $SubscriptionID | Out-Null
@@ -1337,10 +1337,10 @@ Stop-Transcript | Out-Null
  if ($selection -eq "1")
 
  {
-    write-host ""
-    $aadClientSecretSec = Read-host -Prompt "Enter AAD Client Secret"
-    #Get Application ObjectID based on APPID
-    $error.clear()
+ Write-Host ""
+ $aadClientSecretSec = Read-host -Prompt "Enter AAD Client Secret"
+ #Get Application ObjectID based on APPID
+ $error.clear()
     try {$AppObjectID = (Get-AzureADApplication -Filter "AppId eq '$AADClientID'").ObjectId}
 
     catch {
@@ -1351,6 +1351,7 @@ Stop-Transcript | Out-Null
     $GetAzureADApplicationObjectIdCommand =  '$AppObjectID' + " = (Get-AzureADApplication -Filter " + '"' + "AppId eq " + "'" + "$AADClientID" + "'" + '"' + ").ObjectId"
     
     }
+
  }
 
 
