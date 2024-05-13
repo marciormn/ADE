@@ -191,11 +191,11 @@ Please check the diagram with the detailed steps
 
 ### **Option 1** - Download the script from github repository to the Azure cloud shell drive:
 
-- Open [**Script repository**](https://github.com/gabriel-petre/ADE/tree/main/Recreate_DualPass_VM_from_disk)
+- Open [**Script repository**](https://github.com/marciormn/ADE/tree/main/Recreate_DualPass_VM_from_disk)
 - Check what is the latest available version of the script
 - Modify the command bellow to download the latest version of the script in to the $HOME directory of your Azure cloud shell session.
 ```PowerShell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gabriel-petre/ADE/main/Recreate_DualPass_VM_from_disk/Recreate_DualPass_VM_from_disk_1.0.ps1" -OutFile $home/Recreate_DualPass_VM_from_disk_1.0.ps1
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/marciormn/ADE/main/Recreate_DualPass_VM_from_disk/Recreate_DualPass_VM_from_disk_1.1.ps1" -OutFile $home/Recreate_DualPass_VM_from_disk_1.1.ps1
 ```
 - Open [**Azure Cloud Shell**](http://shell.azure.com/)
 - Paste the command and enter to download the script in to the $HOME directory of your Azure cloud shell session.
@@ -203,7 +203,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gabriel-petre/ADE/main
 
 ### **Option 2** - Upload the script from your local machine to to the Azure cloud shell drive:
 
-- Download the latest version of the script "Recreate_DualPass_VM_from_disk" from the [**repository**](https://github.com/gabriel-petre/ADE/tree/main/Recreate_DualPass_VM_from_disk)  
+- Download the latest version of the script "Recreate_DualPass_VM_from_disk" from the [**repository**](https://github.com/marciormn/ADE/tree/main/Recreate_DualPass_VM_from_disk)  
 - Open [**Azure Cloud Shell**](http://shell.azure.com/)
 - Click on the Upload\Download\Manage file share icon, click on upload and select from your local machine the script you previously downloaded
 
@@ -228,13 +228,13 @@ Recreate_DualPass_VM_from_disk_1.0.ps1
 
 **Example of how to run the script for VMs with managed disks:**
 ```PowerShell
-./Recreate_DualPass_VM_from_disk_1.0.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -OSDiskName "<Name of the disks that will be the OS disk>" -OSDiskRg "<Resource Group Name of the disks that will be the OS disk>"
+./Recreate_DualPass_VM_from_disk_1.1.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -OSDiskName "<Name of the disks that will be the OS disk>" -OSDiskRg "<Resource Group Name of the disks that will be the OS disk>"
 ```
 *Note: Command above will Delete VM, recreate VM from the exported config JSON file and encrypt it again using Dual Pass method*
 
 **Example of how to run the script for VMs with unmanaged disks:**
 ```PowerShell
-./Recreate_DualPass_VM_from_disk_1.0.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -OSDiskName "<Name of the disks that will be the OS disk>" -NewOSDiskStorageAccountName "<Name of the storage account>" -NewOSDiskContainer "<Name of the container from the storage account>"
+./Recreate_DualPass_VM_from_disk_1.1.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -OSDiskName "<Name of the disks that will be the OS disk>" -NewOSDiskStorageAccountName "<Name of the storage account>" -NewOSDiskContainer "<Name of the container from the storage account>"
 ```
 *Note: Command above will Delete VM, recreate VM from the exported config JSON file and encrypt it again using Dual Pass method*
  
