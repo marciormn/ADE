@@ -227,7 +227,7 @@ sr0                  11:0    1 1024M  0 rom
 - Check what is the latest available version of the script
 - Modify the command bellow to download the latest version of the script in to the $HOME directory of your Azure cloud shell session.
 ```PowerShell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gabriel-petre/ADE/main/Create_Rescue_VM_from_DualPass_Encrypted_Vm/Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.0.ps1" -OutFile $home/Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.0.ps1 
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/marciormn/ADE/main/Create_Rescue_VM_from_DualPass_Encrypted_Vm/Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.1.ps1" -OutFile $home/Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.1.ps1 
 ```
 - Open [**Azure Cloud Shell**](http://shell.azure.com/)
 - Paste the command and enter to download the script in to the $HOME directory of your Azure cloud shell session.
@@ -248,7 +248,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gabriel-petre/ADE/main
 - See below examples on how to run the script:
 
 <pre>
-Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.0.ps1 
+Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.1.ps1 
     [-SubscriptionID] 
     [-VmName] 
     [-VMRgName]
@@ -273,19 +273,19 @@ Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.0.ps1
 
 **Example 1 of how to run the script (Managed and Unmanaged disks):**
 ```PowerShell
-./Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.0.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -RescueVmName "<Rescue VM Name>" -RescueVmRg "<Impacted VM resource group Name>" -CopyDiskName "<Name for the copy of the OS disk>" -RescueVmUserName "<User Name>" -RescueVmPassword "<Password>"
+./Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.1.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -RescueVmName "<Rescue VM Name>" -RescueVmRg "<Impacted VM resource group Name>" -CopyDiskName "<Name for the copy of the OS disk>" -RescueVmUserName "<User Name>" -RescueVmPassword "<Password>"
 ```
 *Note: Command above will create a Rescue VM without a public IP, attach as a data disk a copy of the OS disk of the impacted VM and unlock that data disk*
  
  **Example 2 of how to run the script (Managed and Unmanaged disks):**
  ```PowerShell
-./Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.0.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -RescueVmName "<Rescue VM Name>" -RescueVmRg "<Impacted VM resource group Name>" -CopyDiskName "<Name for the copy of the OS disk>" -RescueVmUserName "<User Name>" -RescueVmPassword "<Password>" -associatepublicip -enablenested
+./Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.1.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -RescueVmName "<Rescue VM Name>" -RescueVmRg "<Impacted VM resource group Name>" -CopyDiskName "<Name for the copy of the OS disk>" -RescueVmUserName "<User Name>" -RescueVmPassword "<Password>" -associatepublicip -enablenested
  ```
 Note: Command above will create a Rescue VM with a public IP, install Hyper-V role, sets the data disk and BEK volume offline and configure\create a Vm inside Hyper-V from the data disks attached, which is a copy of the OS disk of the impacted VM. Once Hyper-V VM will be started, the OS will be able to unlock the data disk since BEK volume is also attached to that VM
 
  **Example 3 of how to run the script (Managed and Unmanaged disks):**
  ```PowerShell
-./Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.0.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -RescueVmName "<Rescue VM Name>" -RescueVmRg "<Impacted VM resource group Name>" -CopyDiskName "<Name for the copy of the OS disk>" -RescueVmUserName "<User Name>" -RescueVmPassword "<Password>" -associatepublicip -enablenested -TagName1 "<TagName1>" -TagValue1 "<TagValue1>" -TagName2 "<TagName2>" -TagValue2 "<TagValue2>" -TagName3 "<TagName3>" -TagValue3 "<TagValue3>" -TagName4 "<TagName4>" -TagValue4 "<TagValue4>" -TagName5 "<TagName5>" -TagValue5 "<TagValue5>"
+./Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.1.ps1 -SubscriptionID "<Subscription ID>" -VmName "<Impacted VM Name>" -VMRgName "<Impacted VM resource group Name>" -RescueVmName "<Rescue VM Name>" -RescueVmRg "<Impacted VM resource group Name>" -CopyDiskName "<Name for the copy of the OS disk>" -RescueVmUserName "<User Name>" -RescueVmPassword "<Password>" -associatepublicip -enablenested -TagName1 "<TagName1>" -TagValue1 "<TagValue1>" -TagName2 "<TagName2>" -TagValue2 "<TagValue2>" -TagName3 "<TagName3>" -TagValue3 "<TagValue3>" -TagName4 "<TagName4>" -TagValue4 "<TagValue4>" -TagName5 "<TagName5>" -TagValue5 "<TagValue5>"
  ```
 Note: Command above will create a Rescue VM with a public IP and add 5 name\value pairs as TAGs , install Hyper-V role, sets the data disk and BEK volume offline and configure\create a Vm inside Hyper-V from the data disks attached, which is a copy of the OS disk of the impacted VM. Once Hyper-V VM will be started, the OS will be able to unlock the data disk since BEK volume is also attached to that VM
 
