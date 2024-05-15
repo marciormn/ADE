@@ -1,6 +1,7 @@
 # What is this automated process
 
 All credits to Gabriel Petre: https://github.com/gabriel-petre/ADE/blob/main/Create_Rescue_VM_from_DualPass_Encrypted_Vm/readme.md
+<br />
 Just updating some lines.
 
 This automated process is actually a powershell script
@@ -125,7 +126,7 @@ Please check the diagram with the detailed steps
 
 - As mentioned, this script creates a rescue environment to be able to troubleshoot the actual issue of impacted VM. 
 - Once the issue was resolved, to be able to bring online the fixed VM from the rescue environment back in Azure, since "swap disk" feature is not supported\working on dual pass encrypted VMs, another script was created which will recreate the original VM from the fixed disks, by deleting original VM and recreate it back and then encrypt it again with dual pass.
-- The script which will recreate the original VM from the fixed disks can be found in the (restore process) [**repository**](https://github.com/gabriel-petre/ADE/blob/main/Recreate_DualPass_VM_from_disk/Recreate_DualPass_VM_from_disk_1.0.ps1). 
+- The script which will recreate the original VM from the fixed disks can be found in the (restore process) [**repository**](https://github.com/marciormn/ADE/blob/main/Create_Rescue_VM_from_DualPass_Encrypted_Vm/Create_Rescue_VM_from_DualPass_Encrypted_Vm_1.1.ps1). 
 
 <br />
 
