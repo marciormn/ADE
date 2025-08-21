@@ -32,4 +32,4 @@ Then you can just click on download on the Shell session and put the name of the
 ![image](https://user-images.githubusercontent.com/8367687/215176373-9cb49d82-2438-45ef-8fe5-6ec3e4b0e847.png)
 
 
-Author: German Vives
+Author: German Vives - https://github.com/vivesg 
