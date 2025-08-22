@@ -1670,7 +1670,7 @@ if ($VnetName -ne $null)  # use existing Vnet\Subnet
     $Vnet = Get-AzVirtualNetwork -Name "$Vnetname" -ResourceGroupName "$VnetRG"
 
     #Get existing Subnet
-    $Subnet = Get-AzVirtualNetworkSubnetConfig -Name $subnetName -VirtualNetwork $vnet
+    $Subnet = Get-AzVirtualNetworkSubnetConfig -Name $SubnetName -VirtualNetwork $vnet
 
     if ($NicNsgName)
     {
